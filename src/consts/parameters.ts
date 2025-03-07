@@ -6,7 +6,20 @@ export const contractConst = "0x436492DBc2E30E56FaC8F2297BD1964833c0687d";
 
 // The name of the chain your contract is deployed to.
 // Refer to README.md on how to specify the chain name.
-export const chainConst = "mumbai";
+export const chainConst = {
+  chainId: 80002,
+  rpc: ["https://80002.rpc.thirdweb.com"],
+  nativeCurrency: {
+    name: "MATIC",
+    symbol: "MATIC",
+    decimals: 18,
+  },
+  shortName: "amoy",
+  slug: "polygon-amoy",
+  testnet: true,
+  chain: "Polygon",
+  name: "Polygon Amoy Testnet",
+};
 
 // It is IMPORTANT to provide your own API key to use the thirdweb SDK and infrastructure.
 // Please ensure that you define the correct domain for your API key from the API settings page.

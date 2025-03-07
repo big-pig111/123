@@ -1,9 +1,9 @@
 > [!Important]  
-> This repository is referencing the `mumbai` chain.
+> This repository is using the `Polygon Amoy Testnet` chain.
 > 
-> `Mumbai` [is deprecated since 08/04/2024](https://blog.thirdweb.com/deprecation-of-mumbai-testnet/), meaning the code in this repository will no longer work out of the box.
+> Previously, this repository referenced the `Mumbai` testnet which [was deprecated since 08/04/2024](https://blog.thirdweb.com/deprecation-of-mumbai-testnet/).
 >
-> You can still use this repository, however you will have to switch any references to `mumbai` to another chain.
+> The code has been updated to use the Polygon Amoy Testnet (Chain ID: 80002) instead.
 
 # ERC721 Drop Claim Page
 
@@ -60,6 +60,24 @@ export const chainConst = Sepolia;
 
 If your chain is not included in the `@thirdweb-dev/chains` package, you can provide the chain information yourself by creating an object as mentioned [here](https://portal.thirdweb.com/react/react.thirdwebprovider#custom-evm-chains)
 
+#### Example for Polygon Amoy Testnet
+
+```ts
+export const chainConst = {
+  chainId: 80002,
+  rpc: ["https://80002.rpc.thirdweb.com"],
+  nativeCurrency: {
+    name: "MATIC",
+    symbol: "MATIC",
+    decimals: 18,
+  },
+  shortName: "amoy",
+  slug: "polygon-amoy",
+  testnet: true,
+  chain: "Polygon",
+  name: "Polygon Amoy Testnet",
+};
+```
 
 ### 3. Customize the Styling
 
