@@ -2,7 +2,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./styles/globals.css";
 import { Toaster } from "./components/ui/Toaster";
 import { getGasless } from "./utils/getGasless";
@@ -13,6 +12,7 @@ import {
   relayerUrlConst,
   clientIdConst,
 } from "./consts/parameters";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
@@ -39,5 +39,5 @@ root.render(
         <App />
       </ThirdwebProvider>
     </QueryClientProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
