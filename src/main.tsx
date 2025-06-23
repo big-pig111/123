@@ -12,6 +12,7 @@ import {
   relayerUrlConst,
   clientIdConst,
 } from "./consts/parameters";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
@@ -28,11 +29,15 @@ const chain = (urlParams.get("chain") && urlParams.get("chain")?.startsWith("{")
 
 const clientId = urlParams.get("clientId") || clientIdConst || "";
 
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <ThirdwebProvider activeChain={chain} sdkOptions={sdkOptions} clientId={clientId}>
-      <Toaster />
-      <App />
-    </ThirdwebProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThirdwebProvider activeChain={chain} sdkOptions={sdkOptions} clientId={clientId}>
+        <Toaster />
+        <App />
+      </ThirdwebProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 );
