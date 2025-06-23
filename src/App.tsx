@@ -1,3 +1,4 @@
+import React from "react";
 import {
   ConnectWallet,
   detectContractFeature,
@@ -295,7 +296,7 @@ export default function Home() {
   if (!contractAddress) {
     return (
       <div className="flex items-center justify-center h-full">
-        No contract address provided
+        未设置合约地址，请在 <code>src/consts/parameters.ts</code> 中将 <b>contractConst</b> 替换为你在 BNB 测试网部署的合约地址。
       </div>
     );
   }
